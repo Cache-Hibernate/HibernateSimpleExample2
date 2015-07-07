@@ -24,34 +24,34 @@ public class Main {
 	public static void main(String[] args) throws SQLException{
         Random    rand = new Random();
         int randNumber = rand.nextInt(100);
-//        // Создадим двух студентов
-//        University university = new University("OMR Road " + randNumber, "Chennai " + randNumber, "TN " + randNumber, String.valueOf(randNumber));
+        /* Создадим двух студентов */
+        University university = new University("OMR Road " + randNumber, "Chennai " + randNumber, "TN " + randNumber, String.valueOf(randNumber));
 //        add("Ivanov-" + String.valueOf(randNumber), 23l, university);
 //        add("Petrova-" + String.valueOf(randNumber), 19l, university);
 
-        // Выведем всех студентов из базы данных
+        /* Выведем всех студентов из базы данных */
         print();
 
-//        // Выведем только 3-студента из базы данных
+        /* Выведем только 3-студента из базы данных */
 //        print(3);
 
-//        // Выведем только одного студента из базы данных
+        /* Выведем только одного студента из базы данных */
 //        printId(3l);
 
-        // Поиск студентов в базе данных по: имени и возрасту
+        /* Поиск студентов в базе данных по: имени и возрасту */
         printFind("Ivanov", 20l, 30l);
 
-        // Поиск студентов в базе данных по: имени/возрасту и сортировка
+        /* Поиск студентов в базе данных по: имени/возрасту и сортировка */
         printFindSort("Ivanov", 20l, 40l, 2);
 
         randNumber = rand.nextInt(100);
-//        // Обновим только одного студента в базе данных
-//        University updateUniversity = new University("OMR Road " + randNumber, "Chennai " + randNumber, "TN " + randNumber, String.valueOf(randNumber));
+        /* Обновим только одного студента в базе данных */
+        University updateUniversity = new University("OMR Road " + randNumber, "Chennai " + randNumber, "TN " + randNumber, String.valueOf(randNumber));
 //        updateId(5l, "Aaaa-" + String.valueOf(randNumber), 33l, updateUniversity);
 //        updateId(6l, "Bbbb-" + String.valueOf(randNumber), 29l, updateUniversity);
 //        print();
 
-//        // Удалим только одного студента из базы данных
+        /* Удалим только одного студента из базы данных */
 //        delete(1l);
 //        delete(2l);
 //        print();
@@ -63,8 +63,7 @@ public class Main {
         student.setName(name);
         student.setAge(age);
         student.setUniversity(university);
-        // Сохраним их в бд, id будут сгенерированы автоматически
-        Factory.getInstance().getStudentDAO().addStudent(student);
+        Factory.getInstance().getStudentDAO().addStudent(student); // Сохраним их в бд, id будут сгенерированы автоматически
     }
 
     public static void print() throws SQLException{
@@ -172,8 +171,7 @@ public class Main {
         student.setName(name);
         student.setAge(age);
         student.setUniversity(university);
-        // Обновим их в бд
-        Factory.getInstance().getStudentDAO().updateStudent(student);
+        Factory.getInstance().getStudentDAO().updateStudent(student); // Обновим их в бд
     }
 
     public static void delete(Long id) throws SQLException{

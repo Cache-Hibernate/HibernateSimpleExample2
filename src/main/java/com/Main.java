@@ -59,11 +59,12 @@ public class Main {
 
 
     public static void add(String name, Long age, University university) throws SQLException{
-        Student student = new Student();
-        student.setName(name);
-        student.setAge(age);
-        student.setUniversity(university);
-        Factory.getInstance().getStudentDAO().addStudent(student); // Сохраним их в бд, id будут сгенерированы автоматически
+//        Student student = new Student();
+//        student.setName(name);
+//        student.setAge(age);
+//        student.setUniversity(university);
+//        Factory.getInstance().getStudentDAO().addStudent(student); // Сохраним их в бд, id будут сгенерированы автоматически
+        Factory.getInstance().getStudentDAO().addStudent(new Student(name, age, university)); // Сохраним их в бд, id будут сгенерированы автоматически
     }
 
     public static void print() throws SQLException{
